@@ -1,0 +1,103 @@
+@media(min-width:320px) and (max-width:576px){
+   .main-img{
+    height: 500px;
+   } 
+}
+.card-150{
+    height: 100px;
+    width: 300px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;
+   
+
+}
+.logo{
+    font-size: 60px;
+    font-weight: bolder;
+    color: rgb(12, 215, 147);
+
+}
+.heading h3{
+color: rgb(12, 215, 147);
+font-size: 50px;
+}
+.heading p{
+    margin: 0px;
+    padding: 0px;
+   font-size: 20px;
+   font-weight: 500;
+}
+.position{
+    position: absolute;
+}
+.main-img{
+    margin-top: 50px;
+    height: 600px;
+    width: 500px;
+    border-radius: 10px;
+    z-index: 3;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.562) ;
+}
+.shape1{
+    top: 20px;
+   left: -35px;
+   transform: scale(1.2);
+   z-index: -1;
+   
+   
+
+}
+.shape2{
+    height: 150px;
+    left: 450px;
+    bottom: 40px;
+    z-index: -1;
+   
+}
+.shape3{
+ top: 20px;
+   left: -70px;   z-index: -2;
+  height: 130px;
+   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.422) ;
+   transform: rotate(-40deg);
+   border-radius: .5rem;
+       
+}
+.shape4{
+   left:400px;
+   border-radius: .5rem;   
+}
+.shape5{
+   left: 400px;
+   bottom: 10px;
+   z-index: 5;
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.422) ;  
+ transition: bottom .5s ease,
+ box-shadow .5s ease;
+       
+}
+.shape5:hover{
+    bottom: 20px;
+    box-shadow: 0px 0px 50px rgba(24, 235, 175, 0.732);
+}
+.content-part{
+    padding: 120px 50px;
+    
+}
+.h-about{
+    font-size: 60px;
+}
+.content-part p{
+     font-family: "Helvetica Neue", Arial, sans-serif;
+     color: rgba(51, 50, 50, 0.732);
+}
+.prop li{
+    list-style: none;
+
+
+}

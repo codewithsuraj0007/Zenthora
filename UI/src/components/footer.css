@@ -1,0 +1,58 @@
+.footerContainer1{
+    background-color: #f0f4f5;
+}
+.TextField{
+width: 60%;
+background-color: #ffffff;
+}
+.subscribe{
+    background-color: #1ab69d;
+    color: white;
+    font-size: 18px;
+
+}
+.subscribe:hover{
+    background-color: #1ab69d;
+}
+li{
+    list-style: none    ;
+
+}
+li a{
+    text-decoration: none;
+    color: black;
+    
+}
+.medias{
+height: 50px;
+width: 90px;
+/* background-color: rgb(245, 245, 16); */
+margin-left: 20px;
+text-align: center;
+line-height: 50px;
+font-size: 24px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) ;
+border-radius: .5rem;
+cursor: pointer;
+transition: box-shadow 0.4s ease,transform 0.5s ease ;
+}
+.medias:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.533) ;
+
+transform:translateY(-6px)
+}
+ 
+.footerList{
+    margin: 10px;
+}
+
+.footerLink:hover{
+    color:orange;
+}
+.footerList:hover{
+    color: orange;
+}
+.footerContainer2{
+    background-color: #e7e9e9;
+}
+

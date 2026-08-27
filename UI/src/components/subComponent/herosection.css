@@ -1,0 +1,70 @@
+@media (min-width: 320px) and (max-width: 576px) {
+
+.hero-image-parent{
+ height: 450px ;
+ width: 500px;
+ background-color: yellow;
+ background: url("/images/girl-1.webp");
+ background-position: 50%;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+}
+.img-heading,.hero-image{
+display: none;
+}
+
+}
+
+.bg-color1{background-color: #E65100;}
+.bg-color2{background-color: #6A1B9A;}
+.hero-container{
+    background-color: whitesmoke;
+}
+.main-heading{
+    font-size: 60px;
+}
+.hero-para{
+    color: rgba(0, 0, 0, 0.503);
+}
+
+.Explore-btn{
+ 
+    padding:5px 20px;
+    font-size:20px;
+    font-weight:500;
+
+    background:linear-gradient(45deg,#e651006b,#ffb199e3);
+
+    box-shadow:0 0 20px rgba(230,81,0,.25);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        color .35s ease;
+}
+
+.Explore-btn:hover{
+
+    transform:translateY(-3px) scale(1.03);
+
+    box-shadow:0 12px 25px rgba(230, 81, 0, 0.596);
+
+    color:rgb(21, 21, 21)
+}
+.img-heading{
+height: 220px;
+position: relative;
+right: 55px;
+bottom: 440px;
+
+}
+.hero-container{
+    background-color:rgba(185, 242, 228, 0.601);
+}
+.shape-2{
+    position: relative;
+left: 250px;
+bottom: 200px;}
+/* .hero-container{
+    height: 680px;
+} */

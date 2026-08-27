@@ -1,0 +1,83 @@
+.artical-h{
+        color:rgba(0, 0, 0, 0.437); ;
+}
+.img-main{
+    position: relative;
+}
+.art-img{
+    background: var(--bg);
+    height: 320px;
+   width:   320px  !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: .5rem;
+     position: relative;
+   margin-bottom:280px ;
+}
+.art-prop{
+    position: absolute;
+    z-index: 5;
+   min-height:270px;
+   width: 270px;
+    box-shadow: 0px 0px 10px  black ;
+      background: white;
+      top: 210px;
+      left: 20px;
+  
+    
+}
+.icon-ar{
+    color:#1AB69D;
+    cursor: pointer;
+}
+.hover:hover{
+    cursor: pointer;
+    color: #1AB69D;
+}
+.art-prop::before{
+    content:"➜";
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    color: white;
+    font-size: 44px;
+    background-color: #1AB69D;
+    border-radius: 50%;
+    display: block;
+    line-height: 80px;
+    margin-top: -65px;
+    margin-left:120px;
+    transform: translateY(-55px);
+    opacity:0;
+
+     transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.art-prop:hover::before{
+    opacity:1;
+    transform: translateY(0);
+}
+
+.art-img{
+    cursor: pointer;
+transition:background .4s ease,transform .4s  ease;
+
+}
+
+.art-img:hover{
+background:
+    linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.408),
+        rgba(0, 0, 0, 0.529)
+    ),
+    var(--bg);
+    transform: scale(1.05);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}

@@ -1,0 +1,41 @@
+.text1{
+    color:#898a8a;
+}
+.bages-trending{
+    height: 30px;
+    width: 100px;
+  right:10px;
+  top: 10px;
+  border-radius: .3rem;
+  background-color:#E65100 ;
+}
+.bages-text{
+    font-size: 14px;
+  
+}
+.card-title-trending{
+    height: 30px;
+    width:100px ;
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(1, 56, 38);
+    font-weight: 500;
+    border-radius: .2rem;
+}
+.card-text{
+    color: #0c0c0cb0;
+}
+.hr-hz{
+    height: 20px;
+    width: 40px;
+    color: red;
+    transform: rotate(90deg);
+}
+.trending-section{
+    background-color: rgba(171, 236, 218, 0.541);
+}
+.more-project{
+    width: 30%;
+  font-size: 25px;
+}

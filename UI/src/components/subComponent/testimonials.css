@@ -1,0 +1,22 @@
+.card-img-top{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position:relative;
+    background:var(--img);
+    background-size: 100% 100%;
+    
+}
+.badges{
+    top: 80px;
+    
+}
+.h-2{
+    font-size: 60px;
+   
+}
+.h-1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}

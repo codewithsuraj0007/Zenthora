@@ -1,0 +1,32 @@
+@media (min-width:320px) and (max-width:576px){
+.category-item{
+  margin-top: 20px;
+}
+
+
+
+
+}
+
+.category-item{
+    padding: 10px;
+    height: 60px;
+  width: 100%;
+    background-color:var(--bg);
+    cursor: pointer;
+    text-align: center;
+    border-radius: .8rem;
+}
+.category-item-heading{
+         line-height: 35px;
+         transition:  box-shadow .5s ease,
+         background-color .5s ease-in-out,
+         border .5s ease;
+        
+}
+.category-item:hover{
+box-shadow: 0px 5px 30px 4px var(--hover) ;
+background-color:var(--hover);
+border: 1px solid var(--border);
+
+}
