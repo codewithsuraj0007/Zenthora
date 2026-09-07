@@ -6,6 +6,7 @@ const router=express.Router({mergeParams:true});
 
 
 router.get("/",user.show);
-router.post("/register",authController.userRegister);
+router.post("/register",authController.register);
+router.post("/login",authController.login);
 
 export default router;

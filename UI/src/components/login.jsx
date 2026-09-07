@@ -2,101 +2,145 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
- import { Link } from 'react-router-dom';
-import Footer from './footer'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 import "./login.css"
 
 const Login = () => {
-
-  const schema=yup
-  .object()
-  .shape({
-    type:yup.string()
-    .oneOf(["clint","freelancer","admin"],"Invalid type")
-    .required("type must be imp"),
-    password:yup.string().required("please enter valid password"),
-    email:yup.string().email("enter valid email").required("required email")
+  const schema = yup.object().shape({
+    type: yup.string().oneOf(["clint", "freelancer", "admin"], "Invalid type").required("type must be imp"),
+    password: yup.string().required("please enter valid password"),
+    email: yup.string().email("enter valid email").required("required email")
   })
-
-  const {register,handleSubmit,formState:{errors}}=useForm({resolver:yupResolver(schema),shouldUnregister: true})
-  const handleData=(data)=>{console.log(data);
-  }
-  return (
-    <>
-   <section className="container-fluid  ">
-    <div className="container">
-      <div className="row d-flex justify-content-center ">
-        <div className="col-8 mt-5 login-container p-5 ">
-  <h4 className="text-1 text-uppercase">Welcome Back</h4>
-  <h1 className='bold'>Sign In</h1>
-  <p className='text-2'>Don't have an account?<Link to="/register" className='text-1'> Create one free</Link></p>
-        
-        <form action=""  onSubmit={handleSubmit(handleData)} className='needs-validation' noValidate>
-        <label htmlFor="type"> <h5>Login As  .</h5></label>
-        <select name="type" id="type" {...register("type")}>
-          <option value="clint">Clint</option>
-          <option value="admin">Admin</option>
-          <option value="freelancer">frelancer</option>
-        </select>
-
-
-        
-  <div className="form-group mt-3">
-    <label htmlFor="email">Email address</label>
-    <input
-     required
-     type="email"
-      className="form-control"
-      id="email"
-      aria-describedby="emailHelp"
-            {...register("email")}
-
-    />
-    <small id="emailHelp" className="form-text text-muted">
-      We'll never share your email with anyone else.
-    </small>
-  </div>
-
-  <p className='text-danger'>{errors.email&& errors.email.message}</p>
-
-
-  <div className="invalid-feedback">
-  Email is required
-</div>
-
-  <div className="valid-feedback">
-right
-</div>
-  <div className="form-group mt-3">
-    <label htmlFor="password">Password</label>
-    <input
-     required
-     type="password"
-      className="form-control"
-      id="password"
-       aria-describedby="strongPassword"
-             {...register("password")}
-
-    />
-    <small id="strongPassword" className="form-text text-muted">
-     password must be 12 char long 
-    </small>
-  </div>
-  <p className='text-danger'>{errors.password&& errors.password.message}</p>
- 
-        
-        
-   <button type="submit" className="btn btn-primary mt-3 w-100 ">
-    Submit
-  </button>
-</form>
-        </div>
-      </div>
-    </div>
-   </section>
+  const { register,reset, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema), shouldUnregister: true })
+  
+  const handleData =async(data) => { 
     
-    </>
-  )
+     try{  const res= await axios.post("http://localhost:3000/login",data)
+        console.log(res);
+        if (res.data.success===true) {
+          Swal.fire({
+      position: "center",
+      icon: "success",
+      title: res.data.message,
+      showConfirmButton: false,
+      timer: 1500
+    });
+      
+        }
+        else{
+               Swal.fire({
+      position: "center",
+      icon: "error",
+      title: res.data.message,
+      showConfirmButton: true,
+      timer: 1500
+    });
+        }
+        }
+        catch(err){
+         console.log("STATUS:", err.response?.status);
+            console.log("SERVER:", err.response?.data);
+            console.log("ERROR:", err.message);
+    
+          
+        }
+        reset();
+      
+       }
+  return(<>
+<section className="auth-page login-page">
+    <div className="auth-card">
+        <div className="auth-form-pane">
+            <div className="auth-form-content">
+                <span className="auth-eyebrow">
+                    WELCOME BACK
+                </span>
+                <h1>
+                    Sign in
+                </h1>
+                <p className="auth-intro">
+                    New to the community?
+                    <Link to="/register">
+                    Create an account
+                </Link>
+            </p>
+            <form onSubmit={handleSubmit(handleData)} noValidate>
+                <div className="auth-field">
+                    <label htmlFor="type">
+                        Continue as
+                    </label>
+                    <select id="type" {...register("type")}>
+                        <option value="clint">
+                            Client
+                        </option>
+                        <option value="admin">
+                            Admin
+                        </option>
+                        <option value="freelancer">
+                            Freelancer
+                        </option>
+                    </select>
+                    {errors.type &&
+                    <p className="auth-error">
+                        {errors.type.message}
+                    </p>
+                    }
+                </div>
+                <div className="auth-field">
+                    <label htmlFor="email">
+                        Email address
+                    </label>
+                    <input type="email" id="email" placeholder="you@example.com" {...register("email")} />
+                    {errors.email &&
+                    <p className="auth-error">
+                        {errors.email.message}
+                    </p>
+                    }
+                </div>
+                <div className="auth-field">
+                    <label htmlFor="password">
+                        Password
+                    </label>
+                    <input type="password" id="password" placeholder="Enter your password" {...register("password")} />
+                    {errors.password &&
+                    <p className="auth-error">
+                        {errors.password.message}
+                    </p>
+                    }
+                </div>
+                <button type="submit" className="auth-submit">
+                    Sign in
+                    <span>
+                        →
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <aside className="auth-art-pane" aria-label="Welcome message">
+        <div className="auth-orb auth-orb-one" />
+        <div className="auth-orb auth-orb-two" />
+        <div className="auth-art-content">
+            <div className="auth-mark">
+                ✦
+            </div>
+            <h2>
+                Good to see
+                <br />
+                you again.
+            </h2>
+            <p>
+                Pick up right where you left off and make your next great move.
+            </p>
+            <Link className="auth-outline-link" to="/register">
+            Create account
+        </Link>
+    </div>
+</aside>
+</div>
+</section>
+</>)
 }
-
 export default Login
