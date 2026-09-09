@@ -2,10 +2,11 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import "./login.css"
+import { Link, Navigate } from 'react-router-dom';
+import "./login.css";
+import api from '../apis/axios';
+import showPop from '../../utils/alert';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const schema = yup.object().shape({
@@ -14,39 +15,28 @@ const Login = () => {
     email: yup.string().email("enter valid email").required("required email")
   })
   const { register,reset, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema), shouldUnregister: true })
-  
+   const navigate=useNavigate()
   const handleData =async(data) => { 
     
-     try{  const res= await axios.post("http://localhost:3000/login",data)
+     try{  const res= await api.post("/login",data)
         console.log(res);
-        if (res.data.success===true) {
-          Swal.fire({
-      position: "center",
-      icon: "success",
-      title: res.data.message,
-      showConfirmButton: false,
-      timer: 1500
-    });
+          showPop("success",res.data.message);
+             reset();
+             navigate("/")
       
-        }
-        else{
-               Swal.fire({
-      position: "center",
-      icon: "error",
-      title: res.data.message,
-      showConfirmButton: true,
-      timer: 1500
-    });
-        }
         }
         catch(err){
          console.log("STATUS:", err.response?.status);
             console.log("SERVER:", err.response?.data);
             console.log("ERROR:", err.message);
-    
-          
+        
+
+             console.log(err)
+           
+             
+        //   showPop("error",err?.response?.data?.message
         }
-        reset();
+       
       
        }
   return(<>

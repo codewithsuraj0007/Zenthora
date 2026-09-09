@@ -1,81 +1,92 @@
 @media (min-width: 320px) and (max-width: 576px) {
 
+  .links {
+    position: absolute;
+  }
 
-  .links{
-  position: absolute;
+  .nav-link {
+    width: 520px !important;
+  }
 
-}
-.nav-link{
-  width:520px !important;
+  .nav-item {
+    position: relative;
+    right: 250px;
+    transition: box-shadow .3s ease;
+  }
 
-}
-.nav-item{
-position: relative;
-right:250px;
-transition: box-shadow .3s ease;
-}
-.nav-link:hover{
-  box-shadow: 0px 0px 10px  #e651006c inset ;
-border-radius: 10px;}
-.button-mobile{
-  border: none;
-  background-color: white;
-position: relative;
-left: 50px;
-cursor: pointer;
-}
+  .nav-link:hover {
+    box-shadow: 0px 0px 10px #e651006c inset;
+    border-radius: 10px;
+  }
 
-
-}
-
-
-
-.navbar{
-    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.512) inset;
-}.navbar:hover{
-  box-shadow: 0px 0px 5px 1px  rgba(0, 0, 0, 0.742) inset;
-}
-
-.navbar-nav{
-    margin-left: 150px;
+  .button-mobile {
+    border: none;
+    background-color: white;
+    position: relative;
+    left: 50px;
+    cursor: pointer;
+  }
 
 }
-.nav-link{
-width: 100px;
-margin-left: 20px;
-font-size: 18px;
-text-align: center;
-padding-left:30px;
-padding-right:30px;
-font-weight: 700;
-color: rgba(0, 0, 0, 0.507);
-
-}
-.text-color1{
-    color: #E65100;
-}
-.text-color2{
-    color: #6A1B9A;
-}
-.bg-color1{background-color: #E65100;}
-.bg-color2{background-color: #6A1B9A;}
 
 
-
-.nav-link{
-position: relative;
+.navbar {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.512) inset;
 }
-.nav-link::after{
-  content:"";
+
+.navbar:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.742) inset;
+}
+
+.navbar-nav {
+  margin-left: 150px;
+}
+
+.nav-link {
+  width: 100px;
+  margin-left: 20px;
+  font-size: 18px;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.507);
+}
+
+.text-color1 {
+  color: #E65100;
+}
+
+.text-color2 {
+  color: #6A1B9A;
+}
+
+.bg-color1 {
+  background-color: #E65100;
+}
+
+.bg-color2 {
+  background-color: #6A1B9A;
+}
+
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
   position: absolute;
   height: 2px;
   background-color: #E65100;
   bottom: 0px;
   left: 50%;
-  transform:translateX(-50%);
+  transform: translateX(-50%);
   width: 0%;
-  transition:width .3s ease;
+  transition: width .3s ease;
 }
-.nav-link:hover::after,.nav-link.active::after{
-    width:100%;
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }

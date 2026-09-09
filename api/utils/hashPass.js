@@ -1,6 +1,12 @@
 import bcrypt from "bcryptjs";
- const hasPass=async(str)=>{
-    const pass=await bcrypt.hash(str,10);
-    return pass;
- }
- export default hasPass;
+import expressError from "./expressError.js";
+
+const hashPass = async (password) => {
+  const hashedPassword = await bcrypt.hash(password, 10);
+if (!hashedPassword) {
+    throw new expressError("Password hashing failed", 400);
+  }
+  return hashedPassword;
+};
+
+export default hashPass;
