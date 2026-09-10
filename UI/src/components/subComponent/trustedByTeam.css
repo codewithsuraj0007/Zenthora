@@ -101,3 +101,152 @@ font-size: 50px;
 
 
 }
+
+/* Responsive layout */
+.trusted-team-section .hero {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.trusted-team-section .main-img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+}
+
+.trusted-team-section .card-150 {
+    width: min(300px, calc(100% - 24px));
+}
+
+@media (max-width: 991.98px) {
+    .trusted-team-section .row > .col-sm-6 {
+        width: 100%;
+    }
+
+    .trusted-team-section .content-part {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 1rem;
+    }
+
+    .trusted-team-section .h-about {
+        font-size: clamp(2.25rem, 6vw, 3.5rem);
+    }
+
+    .trusted-team-section .shape5 {
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .trusted-team-section {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .trusted-team-section .row {
+        margin-top: 0 !important;
+    }
+
+    .trusted-team-section .row > .col-sm-6 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .trusted-team-section .main-img {
+        margin-top: 1rem;
+        aspect-ratio: 4 / 5;
+    }
+
+    .trusted-team-section .shape1 {
+        top: 0;
+        left: -10px;
+        width: 85px;
+    }
+
+    .trusted-team-section .shape2 {
+        left: auto;
+        right: -8px;
+        bottom: 55px;
+        width: 90px;
+        height: auto;
+    }
+
+    .trusted-team-section .shape3 {
+        top: 8px;
+        left: -15px;
+        width: 75px;
+        height: auto;
+    }
+
+    .trusted-team-section .shape4 {
+        left: auto;
+        right: 0;
+        width: 68px;
+    }
+
+    .trusted-team-section .shape5 {
+        left: 50%;
+        bottom: -18px;
+        transform: translateX(-50%);
+        min-height: 78px;
+        height: auto;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .trusted-team-section .logo {
+        font-size: 42px;
+    }
+
+    .trusted-team-section .heading h3 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .trusted-team-section .heading p {
+        font-size: .9rem;
+    }
+
+    .trusted-team-section .content-part {
+        padding: 3.5rem .5rem 0;
+        text-align: center;
+    }
+
+    .trusted-team-section .top-h {
+        margin-top: 0 !important;
+        font-size: 1rem;
+    }
+
+    .trusted-team-section .h-about {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        line-height: 1.2;
+    }
+
+    .trusted-team-section .h-about br {
+        display: none;
+    }
+
+    .trusted-team-section .content-part p {
+        font-size: .95rem;
+        line-height: 1.6;
+    }
+
+    .trusted-team-section .prop {
+        margin-left: 0 !important;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .trusted-team-section .prop li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+}

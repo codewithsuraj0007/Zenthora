@@ -1,0 +1,244 @@
+.logout-page {
+  min-height: calc(100vh - 120px);
+  padding: clamp(2rem, 6vw, 5rem) 1rem;
+  background: #f5f6ff;
+}
+
+.logout-page-container {
+  max-width: 1200px;
+}
+
+.logout-card {
+  display: grid;
+  grid-template-columns: minmax(340px, .95fr) minmax(420px, 1.05fr);
+  overflow: hidden;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 24px 70px rgba(44, 42, 93, .16);
+}
+
+.logout-showcase {
+  position: relative;
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(2.5rem, 7vw, 7rem);
+  color: #fff;
+  background: linear-gradient(145deg, #5d75dd 0%, #6d57d4 50%, #9350b5 100%);
+}
+
+.logout-showcase::before,
+.logout-showcase::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.logout-showcase::before {
+  width: 680px;
+  height: 680px;
+  top: -140px;
+  right: -500px;
+}
+
+.logout-showcase::after {
+  width: 520px;
+  height: 520px;
+  bottom: -340px;
+  left: -230px;
+  background: rgba(255, 255, 255, .1);
+  border: 0;
+}
+
+.logout-mark,
+.logout-showcase h1,
+.logout-showcase p,
+.logout-note {
+  position: relative;
+  z-index: 1;
+}
+
+.logout-mark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 2.5rem;
+  place-items: center;
+  border-radius: 1.25rem;
+  color: #6b59d1;
+  background: #fff;
+  font-size: 1.75rem;
+  box-shadow: 0 12px 26px rgba(37, 25, 98, .2);
+}
+
+.logout-showcase h1 {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 400;
+  line-height: .96;
+  letter-spacing: -.07em;
+}
+
+.logout-showcase p {
+  max-width: 310px;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.logout-note {
+  display: inline-flex;
+  padding: .7rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 999px;
+  font-size: .95rem;
+}
+
+.logout-note b {
+  margin-left: .25rem;
+}
+
+.logout-form-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.5rem, 7vw, 6rem);
+  color: #24243e;
+}
+
+.logout-form-heading > span {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: #6756d8;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.logout-form-heading h2 {
+  margin: 0;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -.06em;
+}
+
+.logout-form-heading p {
+  margin: .75rem 0 2.75rem;
+  color: #777991;
+  font-size: 1.05rem;
+}
+
+.logout-label {
+  display: block;
+  margin-bottom: .6rem;
+  color: #3b3c54;
+  font-weight: 700;
+}
+
+.logout-input {
+  width: 100%;
+  height: 64px;
+  padding: 0 1.2rem;
+  border: 1px solid #dfe1ed;
+  border-radius: .9rem;
+  outline: 0;
+  color: #303148;
+  background: #fbfbfe;
+  font-size: 1rem;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.logout-input::placeholder {
+  color: #aaacc0;
+}
+
+.logout-input:focus {
+  border-color: #7259db;
+  box-shadow: 0 0 0 4px rgba(114, 89, 219, .12);
+}
+
+.logout-submit {
+  display: flex;
+  width: 100%;
+  min-height: 62px;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  margin-top: 2rem;
+  border: 0;
+  border-radius: .9rem;
+  background: linear-gradient(100deg, #6859dc, #9654bb);
+  box-shadow: 0 14px 26px rgba(102, 82, 211, .28);
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.logout-submit:hover {
+  background: linear-gradient(100deg, #5c4dce, #8646aa);
+  box-shadow: 0 18px 30px rgba(102, 82, 211, .36);
+  transform: translateY(-2px);
+}
+
+.logout-submit span {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 767.98px) {
+  .logout-page {
+    padding: 1.25rem .75rem 2.5rem;
+  }
+
+  .logout-card {
+    grid-template-columns: 1fr;
+    border-radius: 1.5rem;
+  }
+
+  .logout-showcase {
+    min-height: auto;
+    padding: 2.5rem 2rem;
+  }
+
+  .logout-mark {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .logout-showcase h1 {
+    font-size: clamp(2.75rem, 13vw, 4rem);
+  }
+
+  .logout-showcase p {
+    margin: 1.25rem 0;
+    font-size: 1rem;
+  }
+
+  .logout-form-area {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .logout-showcase,
+  .logout-form-area {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .logout-form-heading p {
+    margin-bottom: 2rem;
+  }
+
+  .logout-input {
+    height: 58px;
+  }
+}

@@ -7,8 +7,11 @@ import "./login.css";
 import api from '../apis/axios';
 import showPop from '../../utils/alert';
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { AuthContext } from '../context/authContext';
 const Login = () => {
+const{getCurrUser}=useContext(AuthContext)
+
   const schema = yup.object().shape({
     type: yup.string().oneOf(["clint", "freelancer", "admin"], "Invalid type").required("type must be imp"),
     password: yup.string().required("please enter valid password"),
@@ -22,6 +25,7 @@ const Login = () => {
         console.log(res);
           showPop("success",res.data.message);
              reset();
+           let  currUser= await getCurrUser()
              navigate("/")
       
         }

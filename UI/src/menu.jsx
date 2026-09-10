@@ -39,7 +39,7 @@ const Menu = () => {
               </button>
             </div>
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0" onClick={handleClick}>
 
               <li className="nav-item">
                 <NavLink
@@ -145,7 +145,7 @@ const Menu = () => {
               >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-                  <li className="nav-item">
+                  <li className="nav-item active">
                     <NavLink
                       className="nav-link"
                       aria-current="page"
@@ -173,7 +173,7 @@ const Menu = () => {
                     </NavLink>
                   </li>
 
-                  <li className="nav-item active">
+                  <li className="nav-item ">
                     <NavLink
                       className="nav-link"
                       to="/pricing"

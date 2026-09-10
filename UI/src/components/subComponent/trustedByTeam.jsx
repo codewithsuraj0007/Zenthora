@@ -5,7 +5,7 @@ import { RiBookShelfLine } from "react-icons/ri";
 const TrustedByTeam = () => {
   return (
     <>
-    <section className="container-fluid mt-5 mb-5">
+    <section className="container-fluid mt-5 mb-5 trusted-team-section">
         <div className="container">
             <div className="row mt-5">
                 <div className="col-sm-6 col-12 position-relative  py-5">

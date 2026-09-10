@@ -12,6 +12,7 @@ import CounterSection from './subComponent/counterSection'
 import ContactUsSection from './subComponent/contactUsSection'
 import TalentSection from './subComponent/talentSection'
 import Footer from './footer'
+// import Menuconfige from '../menuConfige/menuconfige
 
 
 
@@ -21,6 +22,7 @@ import Footer from './footer'
 const Home = () => {
   return (
     <>
+   
     <Hero/>
     <Category/>
     <TrustedByTeam/>

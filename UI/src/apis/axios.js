@@ -13,25 +13,46 @@ import showPop from "../../utils/alert.js";
         return config
     }
  )
-    // responce interceptor to handle errors
+//     // responce interceptor to handle errors
 
- api.interceptors.response.use(
-    (response)=>{return response},
-    (error)=>{
- let code=error?.response?.data?.code || error?.response?.status || 500;
- let message=error?.response?.data?.message||"somthing went wrong";
- let errorCode=error?.response?.data?.errorCode || null;
- let redirectTo=error?.response?.data?.redirectTo || null;
+//  api.interceptors.response.use(
+//     (response)=>{return response},
+//     (error)=>{
+//  let code=error?.response?.data?.code || error?.response?.status || 500;
+//  let message=error?.response?.data?.message||"somthing went wrong";
+//  let errorCode=error?.response?.data?.errorCode || null;
+//  let redirectTo=error?.response?.data?.redirectTo || null;
 
-  showPop("error",message)
+//   showPop("error",message)
        
-   if(redirectTo) {
-    window.location.href=redirectTo;}
+//    if(redirectTo) {
+//     window.location.href=redirectTo;}
 
 
-    return Promise.reject(error)
+//     return Promise.reject(error)
 
+//     }
+//  )
+
+api.interceptors.response.use(
+  (response) => response,
+
+  (error) => {
+
+    if (error.config?.url === "/auth/me") {
+      return Promise.reject(error);
     }
- )
+
+    const status = error.response?.status;
+
+    const message =
+      error.response?.data?.message ||
+      "Something went wrong";
+
+    showPop("error", message);
+
+    return Promise.reject(error);
+  }
+);
 
  export default api;

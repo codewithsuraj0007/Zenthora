@@ -64,8 +64,28 @@ if(!isMatch){
 return res.status(200).json(
     {message:"User logged in successfully",code:200,success: true,error:false}
 )
-    }
+    },
 
+
+    logout:async(req,res)=>{
+        const {password}=req.body
+        console.log(password);
+        
+        if (!password) {
+      throw new expressError("Invalid Credentilas",401,null,"/logout")            
+        }
+        const userEmail=req?.session?.user?.email
+        let user=await User.findOne({email:userEmail})
+        if (!user) {
+     throw new expressError("You are not longger",401,null,"/logout")            
+        }
+       let Match=await bcrypt.compare(password,user.password)
+       if(!Match){
+        throw new expressError("password not Match",401,null,"/logout")
+       }
+        req.session.destroy();
+      return res.status(200).json({messege:"User logged out successfully",code:200,success:true,error:false})
+    }
 
 
 

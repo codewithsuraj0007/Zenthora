@@ -16,7 +16,7 @@ import "./category.css"
 const Category = () => {
   return (
     <>
-    <section className="container-fluid mt-4 mb-5">
+    <section className="container-fluid mt-4 mb-5 category-section">
 <div className="container">
   <h1 className='text-center'>Browse Vetted talent<b   className='text-color1'> By Category</b></h1>
   <p className='text-center mt-2'>
